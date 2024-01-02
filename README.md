@@ -39,7 +39,24 @@ for pagina in range(1, 51):
     sopa = bs4.BeautifulSoup(resultado.text, "lxml")
     libros = sopa.select(".product_pod")
 
-    # Aquí agregar el código que extrae y almacena los títulos
+    # #seleccionar datos de los libros
+    libros = sopa.select(".product_pod")
+
+    #iterar libros
+    for libro in libros:
+
+        #chequear que tengan 4 o 5 estrellas
+        if len(libro.select(".star-rating.Four")) != 0 or len(libro.select(".star-rating.Five")):
+
+            #guardar titulo en variable
+            titulo_libro = libro.select("a")[1]["title"]
+
+            #agregar libro a la lista
+            titulos_rating_alto.append(titulo_libro)
+
+# ver los libros de 4 y 5 estrellas en consola
+for t in titulos_rating_alto:
+    print(t)
 
 Este fragmento de código itera a través de las primeras 50 páginas del sitio web, analiza el contenido HTML y selecciona los elementos relevantes.
 
