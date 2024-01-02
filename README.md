@@ -22,7 +22,7 @@ Estas bibliotecas son fundamentales para realizar solicitudes HTTP y para analiz
 
 ### Definición de la URL Base
 
-# crear una url sin número de página
+#### Crear una url sin número de página
 url_base = "https://books.toscrape.com/catalogue/page-{}.html"
 
 La URL base se utiliza para iterar a través de las páginas del sitio web.
